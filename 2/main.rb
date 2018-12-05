@@ -1,3 +1,5 @@
+# Prompt https://adventofcode.com/2018/day/2
+
 num_of_threes = 0
 num_of_twos = 0
 File.readlines("input.txt").each do |box_id|

@@ -1,3 +1,5 @@
+# Prompt https://adventofcode.com/2018/day/4
+
 require "awesome_print"
 
 guard_sleep_times = Hash.new(0)

@@ -1,3 +1,5 @@
+# Prompt https://adventofcode.com/2018/day/1
+
 frequency = 0
 frequnecies = Hash.new(0)
 frequnecies[0] = 1

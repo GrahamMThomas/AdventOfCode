@@ -1,3 +1,5 @@
+# Prompt https://adventofcode.com/2018/day/2
+
 boxes = File.open("input.txt").read
 boxes = boxes.split("\n").map(&:strip)
 answer = "Shit."

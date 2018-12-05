@@ -1,3 +1,5 @@
+# Prompt https://adventofcode.com/2018/day/3
+
 require "awesome_print"
 
 class SquareInch
