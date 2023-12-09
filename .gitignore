@@ -1,3 +1,4 @@
 .vs
 *.pyc
 __azurite*
+.DS_Store
