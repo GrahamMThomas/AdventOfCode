@@ -1,4 +1,4 @@
-# Adjust the path to the root of the project
+# Adjust the path to the root of the project for library access
 import sys
 
 sys.path.append(r"../../")
@@ -7,15 +7,22 @@ import re
 from dataclasses import dataclass
 from enum import Enum
 from typing import List
+from collections import defaultdict
 
 from aoc.input_file import read_input
+from aoc.fluff import print_intro
+
+input = read_input()
+print_intro(__file__, input)
+
+## Solution ##
+
 
 input = "\n".join(read_input())
 
 
 class MapRange:
     def __init__(self, line):
-        print(line)
         self.dest_range, self.source_range, self.length = line.strip().split(" ")
         self.dest_range = int(self.dest_range)
         self.source_range = int(self.source_range)
@@ -56,7 +63,6 @@ def get_map_ranges(map_string):
 
 # print(seed_to_soil)
 seed_to_soil_map_ranges = get_map_ranges(seed_to_soil)
-print(seed_to_soil_map_ranges)
 soil_to_fertilizer_map_ranges = get_map_ranges(soil_to_fertilizer)
 fertilizer_to_water_map_ranges = get_map_ranges(fertilizer_to_water)
 water_to_light_map_ranges = get_map_ranges(water_to_light)
@@ -83,11 +89,9 @@ for seed in seeds:
     for a_range in ranges:
         for map_range in a_range:
             if map_range.contains(current_loc):
-                print(f"\t{current_loc}")
                 current_loc = map_range.f(current_loc)
                 break
 
     all_locs.append(current_loc)
-    print(f"Seed {x} -> {current_loc}")
 
 print("Part 1:", min(all_locs))
