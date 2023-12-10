@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 from typing import List
 
 
@@ -6,7 +7,7 @@ def print_intro(path_to_solution: str, input: List[str]) -> None:
     path = Path(path_to_solution).parts
     day = path[-2]
     part = "B" if "b" in day else "A"
-    day = int(day[0])
+    day = int(re.findall(r"\d+", day)[0])
     year = path[-3]
 
     intro_message = f"Advent of Code {year} - Day {day} Part {part}"
